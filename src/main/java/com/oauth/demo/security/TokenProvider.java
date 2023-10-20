@@ -36,9 +36,9 @@ public class TokenProvider {
 
 
     public String generateToken(Authentication authentication) {
-        User userEntity = (User) authentication.getPrincipal();
+        User user = (User) authentication.getPrincipal();
 
-        List<String> roles = userEntity.getAuthorities()
+        List<String> roles = user.getAuthorities()
                 .stream()
                 .map(GrantedAuthority::getAuthority)
                 .toList();
@@ -49,7 +49,7 @@ public class TokenProvider {
                 .add("typ", TOKEN_TYPE)
                 .and()
                 .signWith(Keys.hmacShaKeyFor(jwtSecret.getBytes()))
-                .subject(userEntity.getUsername())
+                .subject(user.getUsername())
                 .issuedAt(Date.from(ZonedDateTime.now().toInstant()))
                 .expiration(Date.from(ZonedDateTime.now().plusMinutes(jwtExpirationMinutes).toInstant()))
                 .claim("role", roles)

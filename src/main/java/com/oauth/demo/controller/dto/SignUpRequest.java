@@ -10,6 +10,9 @@ public class SignUpRequest {
     private String name;
 
     @NotBlank
+    private String username;
+
+    @NotBlank
     @Email
     private String email;
 

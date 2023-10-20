@@ -18,6 +18,16 @@ public class UserServiceImpl implements UserService{
     private final UserRepository userRepository;
 
     @Override
+    public Optional<User> getUserByUsername(String username) {
+        return userRepository.findByUsername(username).map(converter::convertBack);
+    }
+
+    @Override
+    public boolean hasUserWithUsername(String username) {
+        return userRepository.existsByUsername(username);
+    }
+
+    @Override
     public List<User> getUsers() {
         return userRepository.findAll().stream().map(converter::convertBack).toList();
     }
@@ -26,7 +36,6 @@ public class UserServiceImpl implements UserService{
     public Optional<User> getUserByEmail(String email) {
         return userRepository.findByEmail(email).map(converter::convertBack);
     }
-
 
     @Override
     public boolean hasUserWithEmail(String email) {

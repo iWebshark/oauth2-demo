@@ -10,7 +10,11 @@ public interface UserService {
 
     Optional<User> getUserByEmail(String email);
 
+    Optional<User> getUserByUsername(String username);
+
     boolean hasUserWithEmail(String email);
+
+    boolean hasUserWithUsername(String username);
 
     User validateAndGetUserByEmail(String email);
 

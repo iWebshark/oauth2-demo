@@ -16,6 +16,7 @@ public class UserConverter implements Converter <User, UserEntity> {
                 .firstname(value.getFirstname())
                 .lastname(value.getLastname())
                 .password(value.getPassword())
+                .provider(value.getProvider())
                 .build();
     }
 
@@ -28,6 +29,7 @@ public class UserConverter implements Converter <User, UserEntity> {
                 .firstname(value.getFirstname())
                 .lastname(value.getLastname())
                 .password(value.getPassword())
+                .provider(value.getProvider())
                 .build();
     }
 }
