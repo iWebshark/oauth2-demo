@@ -16,4 +16,9 @@ public class OAuthController {
     public String saySecured() {
         return "Secured Hello world";
     }
+
+    @GetMapping("/secured.admin")
+    public String saySecuredAdmin() {
+        return "Secured Hello world for Admins";
+    }
 }

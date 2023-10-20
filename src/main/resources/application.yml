@@ -8,29 +8,28 @@ spring:
     url: jdbc:h2:mem:test;
     username: user
     password:
-  security:
-    oauth2:
-      client:
-        registration:
-          github:
-            client-id: ${GITHUB_CLIENT_ID}
-            client-secret: ${GITHUB_CLIENT_SECRET}
-            scope: read:user, user:email
-          google:
-            client-id: ${GOOGLE_CLIENT_ID}
-            client-secret: ${GOOGLE_CLIENT_SECRET}
-            scope: profile, email
+  h2:
+    console:
+      enabled: true
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          github:
+#            client-id: ${GITHUB_CLIENT_ID}
+#            client-secret: ${GITHUB_CLIENT_SECRET}
+#            scope: read:user, user:email
+#          google:
+#            client-id: ${GOOGLE_CLIENT_ID}
+#            client-secret: ${GOOGLE_CLIENT_SECRET}
+#            scope: profile, email
 
 
 app:
   jwt:
-    secret: ${JWT_SECRET}
+    secret: asdasdasdasdasdasdasdsadasdasdasdasdadasdasdasdasdasdasdasdasdasdasdsadasdasd
     expiration:
       minutes: 20
-  oauth2:
-    redirectUri: http://localhost:8080/oauth2/redirect
-  cors:
-    allowed-origins: http://localhost:8080
 
 logging:
   level:
