@@ -5,8 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
-public class OAuthController {
+@RequestMapping("/test")
+public class TestController {
+
     @GetMapping
     public String sayHelloWorld() {
         return "Hello world";
@@ -17,7 +18,7 @@ public class OAuthController {
         return "Secured Hello world";
     }
 
-    @GetMapping("/secured.admin")
+    @GetMapping("/secured/admin")
     public String saySecuredAdmin() {
         return "Secured Hello world for Admins";
     }
