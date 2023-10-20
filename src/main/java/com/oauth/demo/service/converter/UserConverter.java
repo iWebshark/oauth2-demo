@@ -11,6 +11,7 @@ public class UserConverter implements Converter <User, UserEntity> {
     public UserEntity convert(User value) {
         return UserEntity.builder()
                 .id(value.getId())
+                .username(value.getUsername())
                 .email(value.getEmail())
                 .role(value.getRole())
                 .firstname(value.getFirstname())
@@ -24,6 +25,7 @@ public class UserConverter implements Converter <User, UserEntity> {
     public User convertBack(UserEntity value) {
         return User.builder()
                 .id(value.getId())
+                .username(value.getUsername())
                 .email(value.getEmail())
                 .role(value.getRole())
                 .firstname(value.getFirstname())
